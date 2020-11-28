@@ -5,7 +5,7 @@ import { BlockHttp, TransactionHttp, Mosaic, NetworkCurrencyMosaic } from 'tsjs-
 import { TransferTransaction, Deadline, Account, NetworkType, PlainMessage, Address } from 'tsjs-xpx-chain-sdk';
 
 
-class Trans extends Component {
+export default class Trans extends Component {
 
 
     transfer() {
@@ -50,4 +50,3 @@ class Trans extends Component {
     }
 }
 
-export default Trans;

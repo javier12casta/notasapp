@@ -1,19 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import home from './pages/home';
+import Trans from './pages/transfer';
+import Login from './pages/login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        
-
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={home} />
+          <Route path='/reports' component={Trans} />
+          <Route path='/products' component={Login} />
+        </Switch>
+      </Router>
+    </>
   );
 }
-
 
 export default App;

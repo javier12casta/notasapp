@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Trans from './transfer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Trans/>
   </React.StrictMode>,
   document.getElementById('root')
 );

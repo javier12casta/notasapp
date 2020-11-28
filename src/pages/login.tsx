@@ -3,11 +3,9 @@ import './login.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 //paginas import App from './../App';
-import App from './../App';
+import { useHistory } from "react-router-dom";
 
 import {BrowserRouter as Router,Switch,Route,Link,Redirect, withRouter} from "react-router-dom";
-
-import home from './home';
 
 
 export default function Login() {
@@ -15,11 +13,14 @@ export default function Login() {
     const [password, setPassword] = useState("");
     console.log(email, password);
 
+    let history = useHistory();
+    
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
     function handleSubmit(event: { preventDefault: () => void; }) {
-        event.preventDefault();     
+        event.preventDefault();
+        history.push('/');     
     }
 
 

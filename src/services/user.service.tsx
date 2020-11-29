@@ -1,12 +1,14 @@
+import axios from "axios";
 import http from "../http-common";
 import user from '../pages/login'
 class Service {
   getAll() {
-    return http.get("/user/");
+    return http.get("/user");
   }
 
   get(id: String) {
     return http.get(`/user/${id}`);
+    
   }
 
   create(data: Object) {
@@ -21,13 +23,7 @@ class Service {
     return http.delete(`/user/${id}`);
   }
 
-  deleteAll() {
-    return http.delete(`/user/`);
-  }
 
-  /* findByTitle(title) {
-    return http.get(`/user?title=${title}`);
-  } */
 }
 
 export default new Service();

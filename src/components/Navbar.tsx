@@ -9,24 +9,24 @@ import { IconContext } from 'react-icons';
 import { LocationDescriptorObject, Location, History } from 'history';
 
 
-/* export interface SidebarData2 {
-  title: string;
-  path: string;
-  icon: JSX.Element;
-  cName: string;
-} */
-
 function Navbar(this: any) {
-  const sesion = false;
+  let val: boolean;
+  let prueba = localStorage.getItem("sesion");
+  let sesion = false;
+  val = Boolean(prueba); 
+  sesion = val;
+
   let SidebarData2: { cName: string | undefined; path: string | LocationDescriptorObject<unknown> | ((location: Location<unknown>) => History.LocationDescriptor<unknown>); icon: React.ReactNode; title: React.ReactNode; }[] = [];
   const [sidebar, setSidebar] = useState(false);
   
   const showSidebar = () => setSidebar(!sidebar);
+  if(sesion == true){
+    SidebarData2 = SidebarData;
+
+  }
   if(sesion == false){
     SidebarData2 = SidebarData1;
 
-  }else{
-    this.SidebarData2 = SidebarData;
   }
    
   

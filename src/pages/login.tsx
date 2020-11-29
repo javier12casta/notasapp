@@ -6,10 +6,11 @@ import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 
 import {BrowserRouter as Router,Switch,Route,Link,Redirect, withRouter} from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Alert, Card } from "react-bootstrap";
 import Service from '../services/user.service';
 
 export interface user {
+    id:number,
     nombres: String,
     apellidos: String,
     correo: String,
@@ -25,6 +26,7 @@ export default function Login() {
     const [password, setPassword] = useState("");
     console.log(email, password);
     datos();
+    
 
     let history = useHistory();
     
@@ -33,12 +35,28 @@ export default function Login() {
     }
     function handleSubmit(event: { preventDefault: () => void; }) {
         event.preventDefault();
-        history.push('/');     
+        if(usu.correo == email && usu.password == password){
+            localStorage.setItem('usuario', JSON.stringify(usu));
+            localStorage.setItem('sesion', 'true');
+            ['success'].map((variant, idx) => (
+                <Alert key={idx} variant={variant}>
+                  {variant} Bienvenido
+                </Alert>
+              ));
+            history.push('/');
+        }else{
+            console.log('datos incorrectos');
+        }
+             
     }
-
+    let usu:user;
     function datos (){
-        let data = Service.getAll();
-        console.log(data);
+        Service.get("duvan@gmail.com").then(res => {
+            const data = res.data;
+            usu = data;
+            console.log(data);
+          });     
+        
     }
 
 

@@ -8,7 +8,7 @@ import {BrowserRouter as Router,Switch,Route,Link,Redirect, withRouter} from "re
 import { Card } from "react-bootstrap";
 
 export default function register() {
-
+    //const [nom, setNom]= useState("");
 
     return (
        <div className="container">

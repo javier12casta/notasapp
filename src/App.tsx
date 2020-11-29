@@ -7,6 +7,7 @@ import Trans from './pages/transfer';
 import Login from './pages/login';
 import Datos from './pages/Datos';
 import register from './pages/register';
+import notas from './pages/notas';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' component={Login} />
           <Route path='/Datos' component={Datos} />
           <Route path='/register' component={register} />
+          <Route path='/notas' component={notas} />
         </Switch>
       </Router>
     </>

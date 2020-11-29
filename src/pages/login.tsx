@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 
 import {BrowserRouter as Router,Switch,Route,Link,Redirect, withRouter} from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 
 export default function Login() {
@@ -28,10 +29,11 @@ export default function Login() {
         <div className="container">
             <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                    <div className="card card-signin my-5">
+                    <div className="card my-5">
+                        <Card.Img src="Ilogin.png" />
                         <div className="card-body">
                             <h5 className="card-title text-center">Login</h5>
-                            <Form onSubmit={handleSubmit}>
+                               <Form onSubmit={handleSubmit}>
                                 <Form.Group controlId="password">
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control
@@ -51,12 +53,16 @@ export default function Login() {
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </Form.Group>
-                                <Button block size="lg" type="submit" disabled={!validateForm()}>
+                                <Button variant="success" block size="lg" type="submit" disabled={!validateForm()}>
                                     Login                                                                                               
                                 </Button>
                                 
                             </Form>
-
+                             <br/>
+                             <br/>                          
+                            <a className="centro">
+                                <Link to="/register">Registrarse</Link>
+                            </a>
 
                         </div>
                     </div>

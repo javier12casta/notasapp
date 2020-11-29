@@ -3,14 +3,33 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../components/SlidebarData';
+import { SidebarData1 } from '../components/SlidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
 import { LocationDescriptorObject, Location, History } from 'history';
 
-function Navbar() {
-    const [sidebar, setSidebar] = useState(false);
+
+/* export interface SidebarData2 {
+  title: string;
+  path: string;
+  icon: JSX.Element;
+  cName: string;
+} */
+
+function Navbar(this: any) {
+  const sesion = false;
+  let SidebarData2: { cName: string | undefined; path: string | LocationDescriptorObject<unknown> | ((location: Location<unknown>) => History.LocationDescriptor<unknown>); icon: React.ReactNode; title: React.ReactNode; }[] = [];
+  const [sidebar, setSidebar] = useState(false);
   
-    const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setSidebar(!sidebar);
+  if(sesion == false){
+    SidebarData2 = SidebarData1;
+
+  }else{
+    this.SidebarData2 = SidebarData;
+  }
+   
+  
   
     return (
       <>
@@ -27,7 +46,7 @@ function Navbar() {
                   <AiIcons.AiOutlineClose />
                 </Link>
               </li>
-              {SidebarData.map((item: { cName: string | undefined; path: string | LocationDescriptorObject<unknown> | ((location: Location<unknown>) => History.LocationDescriptor<unknown>); icon: React.ReactNode; title: React.ReactNode; }, index: string | number | null | undefined) => {
+              {SidebarData2.map((item: { cName: string | undefined; path: string | LocationDescriptorObject<unknown> | ((location: Location<unknown>) => History.LocationDescriptor<unknown>); icon: React.ReactNode; title: React.ReactNode; }, index: string | number | null | undefined) => {
                 return (
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>

@@ -41,3 +41,17 @@ export const SidebarData = [
     cName: 'nav-text'
   }
 ];
+export const SidebarData1 = [
+  {
+    title: 'Home',
+    path: '/',
+    icon: <AiIcons.AiFillHome />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Login',
+    path: '/login',
+    icon: <IoIcons.IoMdPeople />,
+    cName: 'nav-text'
+  }
+];

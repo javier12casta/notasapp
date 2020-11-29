@@ -73,7 +73,7 @@ export default function register() {
                                     />
                                 </Form.Group> 
                         
-                                <Button block size="lg" type="submit">
+                                <Button variant="success" block size="lg" type="submit">
                                     Registrar                                                                                              
                                 </Button>
                                 

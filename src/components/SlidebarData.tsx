@@ -23,7 +23,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Team',
+    title: 'Datos usuario',
     path: '/Datos',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'

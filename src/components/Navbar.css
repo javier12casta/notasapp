@@ -18,7 +18,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: -100%;
     transition: 850ms;
@@ -36,6 +36,7 @@
     padding: 8px 0px 8px 16px;
     list-style: none;
     height: 60px;
+    position: absolute;
   }
   
   .nav-text a {
@@ -56,6 +57,7 @@
   
   .nav-menu-items {
     width: 100%;
+    position: relative;
   }
   
   .navbar-toggle {

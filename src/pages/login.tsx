@@ -30,7 +30,7 @@ export default function Login() {
             <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div className="card my-5">
-                        <Card.Img src="Ilogin.png" width={150} height={250}/>
+                        <Card.Img src="Logo.png" width={250} height={400}/>
                         <div className="card-body">
                             <h5 className="card-title text-center">Login</h5>
                                <Form onSubmit={handleSubmit}>

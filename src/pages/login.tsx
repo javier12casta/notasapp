@@ -7,12 +7,24 @@ import { useHistory } from "react-router-dom";
 
 import {BrowserRouter as Router,Switch,Route,Link,Redirect, withRouter} from "react-router-dom";
 import { Card } from "react-bootstrap";
+import Service from '../services/user.service';
 
-
+export interface user {
+    nombres: String,
+    apellidos: String,
+    correo: String,
+    direccion: String,
+    pais: String,
+    password: String,
+    address: String,
+    privatekey: String,
+    publickey: String
+}
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     console.log(email, password);
+    datos();
 
     let history = useHistory();
     
@@ -22,6 +34,11 @@ export default function Login() {
     function handleSubmit(event: { preventDefault: () => void; }) {
         event.preventDefault();
         history.push('/');     
+    }
+
+    function datos (){
+        let data = Service.getAll();
+        console.log(data);
     }
 
 
@@ -34,7 +51,7 @@ export default function Login() {
                         <div className="card-body">
                             <h5 className="card-title text-center">Login</h5>
                                <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="password">
+                                <Form.Group controlId="email">
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control
                                         size="lg"
@@ -60,9 +77,9 @@ export default function Login() {
                             </Form>
                              <br/>
                              <br/>                          
-                            <a className="centro">
+                            <li className="centro">
                                 <Link to="/register">Registrarse</Link>
-                            </a>
+                            </li>
 
                         </div>
                     </div>
